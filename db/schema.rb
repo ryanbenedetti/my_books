@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506045807) do
+ActiveRecord::Schema.define(version: 20150506152127) do
 
   create_table "books", force: true do |t|
     t.string   "author"
     t.string   "title"
     t.integer  "pages"
     t.string   "publisher"
-    t.date     "pub_date"
     t.integer  "isbn"
     t.string   "genre"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "avg_rating"
+    t.integer  "pub_year"
   end
 
 end
