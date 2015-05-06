@@ -40,5 +40,10 @@
   <%= @book.category %>
 </p>
 
+<p>
+  <strong>Avg. Rating:</strong>
+  <%= @book.avg_rating %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

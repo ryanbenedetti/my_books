@@ -42,8 +42,16 @@
 
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.select :category,  options_for_select([ "Fiction", "Non-fiction", "Reference" ], ["1", "2", "3"])   %>
+    <%= f.select :category,  options_for_select([ "Hardcover", "Paperback", "Mass Market Paperback", "Trade Paperback", "eBook",  "Audible Audiobook", "Audio CD" ], ["1", "2", "3", "4", "5", "6", "7"])   %>
   </div>
+
+  <div class="field">
+    <%= f.label :avg_rating %><br>
+    <%= f.number_field :avg_rating   %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
