@@ -1,0 +1,50 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :pages %><br>
+    <%= f.number_field :pages %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :pub_date %><br>
+    <%= f.date_select :pub_date %>
+  </div>
+  <div class="field">
+    <%= f.label :isbn %><br>
+    <%= f.number_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.select :genre,  options_for_select([ "Classics", "Science Fiction", "Mystery", "Slipstream" ], ["1", "2", "3", "4"])   %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category,  options_for_select([ "Fiction", "Non-fiction", "Reference" ], ["1", "2", "3"])   %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
