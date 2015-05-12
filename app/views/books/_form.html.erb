@@ -37,20 +37,34 @@
   </div>
   <div class="field">
     <%= f.label :genre %><br>
-    <%= f.select :genre,  options_for_select([ "Classics", "Science Fiction", "Mystery", "Slipstream" ], ["1", "2", "3", "4"])   %>
+    <%= f.select :genre,  options_for_select([ "Classics", "Science Fiction", "Mystery", "Slipstream" ])   %>
+  </div>
+
+<div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category, Book::CATEGORIES, prompt: "Pick one"   %>
   </div>
 
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.select :category,  options_for_select([ "Hardcover", "Paperback", "Mass Market Paperback", "Trade Paperback", "eBook",  "Audible Audiobook", "Audio CD" ], ["1", "2", "3", "4", "5", "6", "7"])   %>
+    <%= f.label "Category ID" %><br>
+    <%= f.select :category_id, options_for_select([['Hardcover', 1], ['Paperback', 2], ['Mass Market Paperback', 3], ['Trade Paperback', 4], ['eBook', 5], ['Audible Audiobook', 6], ['Audio', 7]]), prompt: "Pick one"   %>
   </div>
+
+
+ <!--  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category,  options_for_select([ "Hardcover", "Paperback", "Mass Market Paperback", "Trade Paperback", "eBook",  "Audible Audiobook", "Audio CD" ])   %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.select :category_id,  options_for_select([['Hardcover', 1], ['Paperback', 2], ['Mass Market Paperback', 3], ['Trade Paperback', 4], ['eBook', 5], ['Audible Audiobook', 6], ['Audio', 7]])   %>
+  </div> -->
 
   <div class="field">
     <%= f.label :avg_rating %><br>
     <%= f.number_field :avg_rating   %>
   </div>
-
-
 
   <div class="actions">
     <%= f.submit %>
