@@ -31,6 +31,11 @@
     <%= f.label :pub_year %><br>
     <%= f.number_field :pub_year %>
   </div>
+<div class="field">
+    <%= f.label :my_pub_date %><br>
+    <%= f.date_field :my_pub_date, { order: [:month, :day, :year], start_year: 1800} %>
+  </div>
+
   <div class="field">
     <%= f.label :isbn %><br>
     <%= f.number_field :isbn %>
